@@ -1,0 +1,10 @@
+development:
+  clients:
+    default:
+      uri: "mongodb://mongo:27017/artshopapi"
+      options:
+        # allow_dynamic_fields: false
+        # raise_not_found_error: true
+        # fucking NEVER enable!
+        # identity_map_enabled: false
+        connect_timeout: 15

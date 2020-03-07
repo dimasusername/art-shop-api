@@ -1,0 +1,18 @@
+version: "2.0"
+
+services:
+  artshopapi:
+    ports:
+      - 1337:9292
+    volumes:
+      - "./src/:/usr/src/app"
+    command: shotgun -p 9292 -o 0.0.0.0
+  mongo:
+    # https://hub.docker.com/_/mongo/
+    # Use Docker Desktop, not Docker Toolbox
+    # https://www.virtualbox.org/ticket/819
+    # https://docs.mongodb.com/manual/administration/production-notes/#fsync-on-directories
+    # https://jira.mongodb.org/browse/SERVER-8600
+    # https://docs.docker.com/docker-for-mac/docker-toolbox/
+    volumes:
+      - ./mongo-volume:/data/db:rw

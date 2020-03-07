@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+ruby '2.6.5'
+
+# REST-like API framework for Ruby
+gem 'grape'
+# An API focused facade that sits on top of an object model. 
+gem 'grape-entity'
+
+# Object-Document Mapper for MongoDB
+gem 'mongoid'
+
+gem 'rack-cors'
+gem 'rack-timeout'
+
+group :development, :test do
+  # IRB alternative
+  gem 'pry'
+end
+
+group :devtools do
+  # Ruby linter
+  gem 'rubocop', '>= 0.75.0'
+  gem 'reek'
+  gem 'concurrent-ruby'
+  gem 'shotgun'
+end

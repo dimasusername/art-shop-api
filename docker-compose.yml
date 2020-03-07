@@ -1,0 +1,11 @@
+version: "2.0"
+
+services:
+  artshopapi:
+    build: .
+    environment:
+      # https://hub.docker.com/_/ruby#Encoding
+      - LANG=C.UTF-8
+  mongo:
+    restart: always
+    image: mongo:4.2.3
