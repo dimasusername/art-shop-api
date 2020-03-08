@@ -15,7 +15,7 @@ gem 'mongoid'
 
 gem 'rack-cors'
 gem 'rack-timeout'
-gem 'rake'
+gem "rake", ">= 12.3.3"
 # HATEOAS
 gem 'roar'
 
