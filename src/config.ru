@@ -14,6 +14,8 @@ end
 
 run Rack::Cascade.new(
   [
-    Controller
+    Controller,
+    PaintingsController,
+    MeController
   ]
 )

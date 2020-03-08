@@ -1,0 +1,38 @@
+# frozen_string_literal: true
+
+require './config/boot.rb'
+
+namespace :db do
+  task :seed do
+    Mongoid.load!('config/mongoid.yml', ENV['RACK_ENV'])
+    if Customer.count.zero?
+      seed_customers
+    else
+      puts('Customers already seeded.')
+    end
+
+    if Painting.count.zero?
+      seed_paintings
+    else
+      puts('Paintings already seeded.')
+    end
+  end
+end
+
+def seed_paintings
+  puts('Seeding Paintings...')
+  Painting.create(name: 'Atlantis', price: 130)
+  Painting.create(name: 'Palm Park', price: 46)
+  Painting.create(name: 'Skaftafell', price: 46)
+  Painting.create(name: 'Venice 77', price: 25)
+  puts('Done!')
+end
+
+def seed_customers
+  puts('Seeding Customers...')
+  Customer.create(
+    name: 'Dmitrii',
+    balance: 200
+  )
+  puts('Done!')
+end

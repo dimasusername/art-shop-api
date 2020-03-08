@@ -17,6 +17,12 @@
 docker-compose up
 ```
 
+In a separate Terminal Window
+
+```sh
+docker-compose exec artshopapi bundle exec rake db:seed
+```
+
 [Open in Browser](http://localhost:1337)
 
 [Postman](https://documenter.getpostman.com/view/10648923/SzRxVA7A)

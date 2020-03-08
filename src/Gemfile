@@ -7,12 +7,17 @@ ruby '2.6.5'
 gem 'grape'
 # An API focused facade that sits on top of an object model. 
 gem 'grape-entity'
+# HATEOAS
+gem 'grape-roar'
 
 # Object-Document Mapper for MongoDB
 gem 'mongoid'
 
 gem 'rack-cors'
 gem 'rack-timeout'
+gem 'rake'
+# HATEOAS
+gem 'roar'
 
 group :development, :test do
   # IRB alternative

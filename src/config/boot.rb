@@ -6,6 +6,9 @@ require 'bundler'
 ENVIRONMENT = ENV.fetch('RACK_ENV', 'development').to_sym
 Bundler.require(:default, ENVIRONMENT)
 
+require 'roar/json'
+require 'roar/json/hal'
+
 # Global Configuration
 BigDecimal.mode(BigDecimal::ROUND_MODE, BigDecimal::ROUND_HALF_EVEN)
 ROUND_LIMIT = 2
@@ -27,8 +30,10 @@ end
 APP_ROOT = File.expand_path('../', File.dirname(__FILE__))
 
 model_files = File.join(APP_ROOT, %w[models ** *.rb])
+presenters = File.join(APP_ROOT, %w[views ** *.rb])
 files = [
-  model_files
+  model_files,
+  presenters
 ]
 Dir.glob(files).sort.each { |lf| require lf }
 
@@ -43,4 +48,7 @@ require "#{CONTROLLERS_ROOT}/controller.rb"
 
 # API
 
-# Projects
+# Me
+require "#{CONTROLLERS_ROOT}/me.rb"
+# Paintings
+require "#{CONTROLLERS_ROOT}/paintings.rb"

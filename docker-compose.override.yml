@@ -2,6 +2,8 @@ version: "2.0"
 
 services:
   artshopapi:
+    environment:
+      - RACK_ENV=development
     ports:
       - 1337:9292
     volumes:

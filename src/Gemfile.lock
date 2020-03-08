@@ -22,6 +22,8 @@ GEM
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.1.6)
+    declarative (0.0.10)
+    declarative-option (0.1.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     dry-configurable (0.11.3)
@@ -57,6 +59,10 @@ GEM
     grape-entity (0.8.0)
       activesupport (>= 3.0.0)
       multi_json (>= 1.3.2)
+    grape-roar (0.4.1)
+      grape
+      multi_json
+      roar (~> 1.1.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -88,13 +94,20 @@ GEM
       rack (>= 2.0.0)
     rack-timeout (0.6.0)
     rainbow (3.0.0)
+    rake (12.3.2)
     reek (5.6.0)
       codeclimate-engine-rb (~> 0.4.0)
       kwalify (~> 0.7.0)
       parser (>= 2.5.0.0, < 2.8, != 2.5.1.1)
       psych (~> 3.1.0)
       rainbow (>= 2.0, < 4.0)
+    representable (3.0.4)
+      declarative (< 0.1.0)
+      declarative-option (< 0.2.0)
+      uber (< 0.2.0)
     rexml (3.2.4)
+    roar (1.1.0)
+      representable (~> 3.0.0)
     rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -110,6 +123,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
+    uber (0.1.0)
     unicode-display_width (1.6.1)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -125,11 +139,14 @@ DEPENDENCIES
   concurrent-ruby
   grape
   grape-entity
+  grape-roar
   mongoid
   pry
   rack-cors
   rack-timeout
+  rake
   reek
+  roar
   rubocop (>= 0.75.0)
   shotgun
 

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-# Root controller for
-# Kanbanise
+# Root Controller
 class Controller < App
   get do
     {}
